@@ -69,7 +69,7 @@ void getVersion(){
 
         //===================== Parsing=======================
         const size_t capacity = JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(13) + 3*JSON_OBJECT_SIZE(18) + 3120;
-        DynamicJsonBuffer jsonBuffer(capacity);
+ gi       DynamicJsonBuffer jsonBuffer(capacity);
         JsonObject& root = jsonBuffer.parseObject(payload);
         const char* tag_name = root["tag_name"]; 
       // const char* name = root["name"]; 
@@ -165,15 +165,6 @@ void loop(){
     doUpdateCheck = false;
   }
 }
-
-/*
-void nyalaled(){
-  digitalWrite(ESP_LED, LOW);
-  delay(1000);
-  digitalWrite(ESP_LED, HIGH);
-}
-*/
-//
 
 BLYNK_WRITE(V25){
     if (param.asInt() == 1) {  
